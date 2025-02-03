@@ -9,6 +9,10 @@
   --grid-min-item-size: 33%;
   --gutter: 0;
 
+  .status {
+    font-size: var(--step-2);
+  }
+  
   .square {
     font-size: var(--step-2);
     height: 3em;
@@ -16,10 +20,7 @@
 }
 
 .game-info {
-  .status {
-    font-size: var(--step-2);
-  }
   ol {
-    margin: 0;  
+    margin: 0;
   }
 }

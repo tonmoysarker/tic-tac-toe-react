@@ -1,13 +1,6 @@
-import { useState } from "react";
-
-export default function BoardSquare() {
-  const [value, setValue] = useState(null);
-
-  function handleClick() {
-    setValue("X");
-  }
+export default function BoardSquare({ value, onSquareClick }) {
   return (
-    <button className="square" onClick={handleClick}>
+    <button className="square" onClick={onSquareClick}>
       {value}
     </button>
   );
