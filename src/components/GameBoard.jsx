@@ -1,10 +1,6 @@
-import { useState } from "react";
 import BoardSquare from "./BoardSquare";
 
-export default function GameBoard() {
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
-
+export default function GameBoard({ squares, xIsNext, onPlay }) {
   const gameBoard = squares.map((value, index) => (
     <BoardSquare
       key={index}
@@ -14,16 +10,15 @@ export default function GameBoard() {
   ));
 
   const handleSquareClick = (i) => {
-    const newSquares = squares.slice();
+    const nextSquares = squares.slice();
 
-    if (newSquares[i] || calculateWinner(squares)) {
+    if (nextSquares[i] || calculateWinner(squares)) {
       return;
     }
 
-    xIsNext ? (newSquares[i] = "X") : (newSquares[i] = "O");
+    xIsNext ? (nextSquares[i] = "X") : (nextSquares[i] = "O");
 
-    setSquares(newSquares);
-    setXIsNext(!xIsNext);
+    onPlay(nextSquares);
   };
 
   const winner = calculateWinner(squares);

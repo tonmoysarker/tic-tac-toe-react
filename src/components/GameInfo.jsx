@@ -1,10 +1,7 @@
-export default function GameInfo() {
+export default function GameInfo({ content }) {
   return (
     <section className="game-info">
-      <p className="status">Status</p>
-      <ol>
-        <li>This is the game history</li>
-      </ol>
+      <ol>{content}</ol>
     </section>
   );
 }
