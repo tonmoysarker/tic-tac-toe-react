@@ -1,0 +1,25 @@
+.game {
+  width: 90%;
+  margin: 0 auto;
+  --grid-placement: auto-fit;
+  place-content: center;
+}
+
+.game-board {
+  --grid-min-item-size: 33%;
+  --gutter: 0;
+
+  .square {
+    font-size: var(--step-2);
+    height: 3em;
+  }
+}
+
+.game-info {
+  .status {
+    font-size: var(--step-2);
+  }
+  ol {
+    margin: 0;  
+  }
+}

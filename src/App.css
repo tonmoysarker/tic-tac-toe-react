@@ -1,0 +1,42 @@
+/* Variables  */
+:root {
+  /* Generated Using Utopia.fyi  */
+  --step--1: clamp(0.8333rem, 0.8296rem + 0.016vw, 0.844rem);
+  --step-0: clamp(1rem, 0.956rem + 0.1878vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.0945rem + 0.4501vw, 1.4996rem);
+  --step-2: clamp(1.44rem, 1.2432rem + 0.8398vw, 1.999rem);
+  --step-3: clamp(1.728rem, 1.3982rem + 1.4072vw, 2.6647rem);
+
+  --gutter: var(--step-2);
+}
+/* Global Styles  */
+body {
+  display: grid;
+  place-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--step-0);
+}
+
+/* Composition  */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-placement, auto-fill),
+    minmax(var(--grid-min-item-size, 16rem), 1fr)
+  );
+  gap: var(--gutter, 1rem);
+}
+
+.flex {
+  display: flex;
+  gap: var(--gutter, 1rem);
+}
+
+/* Utitlities */
+.wrapper {
+  width: 90vw;
+  width: clamp(16rem, 90vw, 65rem);
+  margin: 0 auto;
+  padding-left: var(--gutter, 1rem);
+  padding-right: var(--gutter, 1rem);
+}
